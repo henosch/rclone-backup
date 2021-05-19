@@ -28,7 +28,8 @@ elif [ "$REMOTE_URL" != "" ]; then
 		wget -nv -O /etc/rclone-backup/backup.list "$REMOTE_URL/backup.list"
 	fi
 
-	if [ ! -f ""/etc/rclone-backup/script.sh" ]; then
+	if [ ! -f "/etc/rclone-backup/script.sh" ]; then
+	   wget -nv -O /etc/rclone-backup/script.sh "$REMOTE_URL/script"
   
 
 
