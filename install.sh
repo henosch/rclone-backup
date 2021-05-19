@@ -31,7 +31,15 @@ elif [ "$REMOTE_URL" != "" ]; then
 	if [ ! -f "/etc/rclone-backup/script.sh" ]; then
 	   wget -nv -O /etc/rclone-backup/script.sh "$REMOTE_URL/script.sh"
 	fi
-  
+
+# blocklist update
+  if [ ! -f "/etc/rclone-backup/update_myblocklist.sh" ]; then
+		wget -nv -O /etc/rclone-backup/update_myblocklist.sh "$REMOTE_URL/update_myblocklist.sh"
+	fi
+
+	if [ ! -f "/etc/rclone-backup/myblocklist.sh" ]; then
+	   wget -nv -O /etc/rclone-backup/myblocklist.sh "$REMOTE_URL/myblocklist.sh"
+	fi
 
 
 	wget -nv -O /etc/systemd/system/rclone-backup.service "$REMOTE_URL/rclone-backup.service" && chmod 644 /etc/systemd/system/rclone-backup.service
