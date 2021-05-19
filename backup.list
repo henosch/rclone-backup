@@ -1,14 +1,47 @@
-﻿# Exclude hidden files and directories
+# Exclude hidden files and directories
 - .*
 - .*/**
 
-# This script
+# Pi-hole
++ /etc/pihole/setupVars.conf
++ /etc/pihole/pihole-FTL.conf
++ /etc/pihole/myblocklist.sh
++ /etc/my_block_list.sh 
++ /etc/pihole/local.list
++ /etc/pihole/custom.list
++ /etc/pihole/logrotate
++ /etc/dnsmasq.d/*.conf
+#+ /etc/lighttpd/lighttpd.conf
++ /etc/cron.d/pihole
++ /etc/systemd/system/pihole-FTL.service
++ /etc/systemd/system/pihole-FTL.service.d/override.conf
++ /etc/pihole/gravity.min.db
+
+# Unbound
++ /etc/unbound/unbound.conf.d/*.conf
++ /etc/systemd/system/unbound.service
++ /etc/systemd/system/unbound.service.d/override.conf
+
+# DNSCrypt
+#+ /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+#+ /etc/systemd/system/dnscrypt-proxy.service
+#+ /etc/systemd/system/dnscrypt-proxy.service.d/override.conf
+
+# Cloudflared
+#+ /etc/cloudflared/config.yaml
+#+ /etc/default/cloudflared
+#+ /etc/systemd/system/cloudflared.service
+#+ /etc/systemd/system/cloudflared.service.d/override.conf
+
+# This backup script
 + /etc/rclone-backup/backup.list
 + /etc/rclone-backup/rclone-backup.conf
 + /etc/rclone-backup/script.sh
++ /etc/rclone-backup/rclone.conf
 
-# Add your entries here
+# User entries should go below this line
 
-# Exclude everything else 
+
+# Exclude everything else
 # DO NOT REMOVE
 - **
