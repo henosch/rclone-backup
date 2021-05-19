@@ -2,11 +2,13 @@
 - .*
 - .*/**
 
+# My own 2 files. Delete it
++ /etc/pihole/myblocklist.sh
++ /etc/my_block_list.sh 
+
 # Pi-hole
 + /etc/pihole/setupVars.conf
 + /etc/pihole/pihole-FTL.conf
-+ /etc/pihole/myblocklist.sh
-+ /etc/my_block_list.sh 
 + /etc/pihole/local.list
 + /etc/pihole/custom.list
 + /etc/pihole/logrotate
