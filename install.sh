@@ -33,12 +33,12 @@ elif [ "$REMOTE_URL" != "" ]; then
 	fi
 
 # blocklist update
-  if [ ! -f "/etc/rclone-backup/update_myblocklist.sh" ]; then
-		wget -nv -O /etc/rclone-backup/update_myblocklist.sh "$REMOTE_URL/update_myblocklist.sh"
+  if [ ! -f "/etc/pihole/update_myblocklist.sh" ]; then
+		wget -nv -O /etc/pihole/update_myblocklist.sh "$REMOTE_URL/update_myblocklist.sh"
 	fi
 
-	if [ ! -f "/etc/rclone-backup/myblocklist.sh" ]; then
-	   wget -nv -O /etc/rclone-backup/myblocklist.sh "$REMOTE_URL/myblocklist.sh"
+	if [ ! -f "/etc/pihole/myblocklist.sh" ]; then
+	   wget -nv -O /etc/pihole/myblocklist.sh "$REMOTE_URL/myblocklist.sh"
 	fi
 
 
