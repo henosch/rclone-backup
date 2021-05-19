@@ -41,6 +41,6 @@ echo "Backing up now..."
 rclone sync --verbose --copy-links \
 	--config "$RCLONE_CONFIG_FILE" \
 	--filter-from="$FILTER_LIST_FILE" \
-	/ remote: \
+	/ remote:rclone_backup \
 	$@ \
 	&& echo "Finished successfully"
