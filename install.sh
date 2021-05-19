@@ -27,7 +27,11 @@ elif [ "$REMOTE_URL" != "" ]; then
 	if [ ! -f "/etc/rclone-backup/backup.list" ]; then
 		wget -nv -O /etc/rclone-backup/backup.list "$REMOTE_URL/backup.list"
 	fi
-	
+
+	if [ ! -f ""/etc/rclone-backup/script.sh" ]; then
+  
+
+
 	wget -nv -O /etc/systemd/system/rclone-backup.service "$REMOTE_URL/rclone-backup.service" && chmod 644 /etc/systemd/system/rclone-backup.service
 	wget -nv -O /etc/systemd/system/rclone-backup.timer "$REMOTE_URL/rclone-backup.timer" && chmod 644 /etc/systemd/system/rclone-backup.timer
 else
