@@ -29,25 +29,25 @@ if [ -d "/etc/pihole" ] && [ -d "/opt/pihole" ] && [ -f "${GRAVITYDB_FILE}" ]; t
                         # Copy data from specific tables
                         {
                         sqlite3 ${GRAVITYDB_FILE} <<EOT
-.mode insert info
-SELECT * FROM 'info';
-.mode insert 'group'
-SELECT * FROM 'group';
-.mode insert 'client'
-SELECT * FROM 'client';
-.mode insert 'client_by_group'
-SELECT * FROM 'client_by_group' WHERE 'client_by_group'.'group_id' > 0;
-.mode insert 'adlist'
-SELECT * FROM 'adlist';
-.mode insert 'adlist_by_group'
-SELECT * FROM 'adlist_by_group' WHERE 'adlist_by_group'.'group_id' > 0;
-.mode insert 'domainlist'
-SELECT * FROM 'domainlist';
-.mode insert 'domainlist_by_group'
-SELECT * FROM 'domainlist_by_group' WHERE 'domainlist_by_group'.'group_id' > 0;
-.mode insert 'domain_audit'
+						.mode insert info
+						SELECT * FROM 'info';
+						.mode insert 'group'
+						SELECT * FROM 'group';
+						.mode insert 'client'
+						SELECT * FROM 'client';
+						.mode insert 'client_by_group'
+						SELECT * FROM 'client_by_group' 						WHERE 'client_by_group'.'group_id' > 0;
+.						mode insert 'adlist'
+						SELECT * FROM 'adlist';
+						.mode insert 'adlist_by_group'
+						SELECT * FROM 'adlist_by_group' WHERE 'adlist_by_group'.'group_id' > 0;
+						.mode insert 'domainlist'
+						SELECT * FROM 'domainlist';
+						.mode insert 'domainlist_by_group'
+						SELECT * FROM 'domainlist_by_group' WHERE 'domainlist_by_group'.'group_id' > 0;
+						.mode insert 'domain_audit'
 SELECT * FROM 'domain_audit';
-EOT
+						EOT
                         } | sqlite3 ${GRAVITYDB_MIN_FILE}
 
                         if [ ! $? -eq 0 ]; then
