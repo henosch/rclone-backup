@@ -46,7 +46,7 @@ if [ -d "/etc/pihole" ] && [ -d "/opt/pihole" ] && [ -f "${GRAVITYDB_FILE}" ]; t
 						.mode insert 'domainlist_by_group'
 						SELECT * FROM 'domainlist_by_group' WHERE 'domainlist_by_group'.'group_id' > 0;
 						.mode insert 'domain_audit'
-SELECT * FROM 'domain_audit';
+						SELECT * FROM 'domain_audit';
 						EOT
                         } | sqlite3 ${GRAVITYDB_MIN_FILE}
 
