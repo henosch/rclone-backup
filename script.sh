@@ -37,7 +37,7 @@ if [ -d "/etc/pihole" ] && [ -d "/opt/pihole" ] && [ -f "${GRAVITYDB_FILE}" ]; t
 						SELECT * FROM 'client';
 						.mode insert 'client_by_group'
 						SELECT * FROM 'client_by_group' 						WHERE 'client_by_group'.'group_id' > 0;
-.						mode insert 'adlist'
+						.mode insert 'adlist'
 						SELECT * FROM 'adlist';
 						.mode insert 'adlist_by_group'
 						SELECT * FROM 'adlist_by_group' WHERE 'adlist_by_group'.'group_id' > 0;
