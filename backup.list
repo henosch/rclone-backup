@@ -2,9 +2,9 @@
 - .*
 - .*/**
 
-# My own 2 files. Delete it
+# pihole update blocklist
 + /etc/pihole/myblocklist.sh
-+ /etc/pihole/my_block_list.sh 
++ /etc/pihole/update_myblocklist.sh 
 
 # Pi-hole
 + /etc/pihole/setupVars.conf
