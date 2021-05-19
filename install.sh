@@ -39,8 +39,8 @@ elif [ "$REMOTE_URL" != "" ]; then
 	fi
 
 	if [ ! -f "/etc/pihole/myblocklist.sh" ]; then
-	   wget -nv -O /etc/pihole/myblocklist.sh "$REMOTE_URL/myblocklist.sh"
-	chmod +x /etc/pihole/myblocklist.sh
+		wget -nv -O /etc/pihole/myblocklist.sh "$REMOTE_URL/myblocklist.sh"
+		chmod +x /etc/pihole/myblocklist.sh
 	fi
 
 
