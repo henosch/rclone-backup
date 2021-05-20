@@ -6,7 +6,7 @@ set -e
 command -v rclone >/dev/null 2>&1 || { echo "This script requires Rclone to run, install it with 'wget -O - https://rclone.org/install.sh | sudo bash'."; }
 
 SPATH=$(dirname $0)
-REMOTE_URL=https://raw.githubusercontent.com/jacklul/rclone-backup/master
+REMOTE_URL=https://raw.githubusercontent.com/henosch/rclone-backup/master
 
 if [ -f "$SPATH/rclone-backup.sh" ] && [ -f "$SPATH/backup.list" ] && [ -f "$SPATH/rclone-backup.service" ] && [ -f "$SPATH/rclone-backup.timer" ]; then
 	cp -v $SPATH/rclone-backup.sh /usr/local/sbin/rclone-backup && chmod +x /usr/local/sbin/rclone-backup
